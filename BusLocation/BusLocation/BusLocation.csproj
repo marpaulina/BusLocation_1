@@ -168,9 +168,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BusStopController.cs" />
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,6 +183,26 @@
     <Compile Include="Migrations\201611291500141_InitialCreate1.cs" />
     <Compile Include="Migrations\201611291500141_InitialCreate1.Designer.cs">
       <DependentUpon>201611291500141_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611301837350_BusStop poprawka.cs" />
+    <Compile Include="Migrations\201611301837350_BusStop poprawka.Designer.cs">
+      <DependentUpon>201611301837350_BusStop poprawka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611302025433_BusStop poprawka2.cs" />
+    <Compile Include="Migrations\201611302025433_BusStop poprawka2.Designer.cs">
+      <DependentUpon>201611302025433_BusStop poprawka2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611302038032_BusStop poprawka 3.cs" />
+    <Compile Include="Migrations\201611302038032_BusStop poprawka 3.Designer.cs">
+      <DependentUpon>201611302038032_BusStop poprawka 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611302112200_BusStop poprawka 4.cs" />
+    <Compile Include="Migrations\201611302112200_BusStop poprawka 4.Designer.cs">
+      <DependentUpon>201611302112200_BusStop poprawka 4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611302123104_BusStop poprawka 5.cs" />
+    <Compile Include="Migrations\201611302123104_BusStop poprawka 5.Designer.cs">
+      <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -253,6 +275,11 @@
     <Content Include="Views\Driver\Drivers.cshtml" />
     <Content Include="Views\Driver\Create.cshtml" />
     <Content Include="Views\Driver\Edit.cshtml" />
+    <Content Include="Views\BusStop\BusStops.cshtml" />
+    <Content Include="Views\BusStop\Create.cshtml" />
+    <Content Include="Views\BusStop\Edit.cshtml" />
+    <Content Include="Views\Track\Tracks.cshtml" />
+    <Content Include="Views\Track\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +301,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611291500141_InitialCreate1.resx">
       <DependentUpon>201611291500141_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611301837350_BusStop poprawka.resx">
+      <DependentUpon>201611301837350_BusStop poprawka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611302025433_BusStop poprawka2.resx">
+      <DependentUpon>201611302025433_BusStop poprawka2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611302038032_BusStop poprawka 3.resx">
+      <DependentUpon>201611302038032_BusStop poprawka 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611302112200_BusStop poprawka 4.resx">
+      <DependentUpon>201611302112200_BusStop poprawka 4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611302123104_BusStop poprawka 5.resx">
+      <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

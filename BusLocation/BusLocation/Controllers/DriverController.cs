@@ -23,8 +23,6 @@ namespace BusLocation.Controllers
 
         public ActionResult Drivers()
         {
-            ViewBag.Message = "Your contact page.";
-           
             return View(repo.GetAllDrivers());
         }
 

@@ -20,6 +20,11 @@ namespace BusLocation.Models
 
         #region BusStop
         IEnumerable<BusStopModels> GetAllBusStops();
+        BusStopModels GetBusStopByID(int busStopId);
+        void AddBusStop(BusStopModels busStop);
+        void DeleteBusStopByID(int busStopId);
+        void UpdateBusStop(BusStopModels busStop);
+       
         #endregion
 
         #region Route

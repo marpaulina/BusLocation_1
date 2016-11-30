@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BusLocation.Models.TrackModels>
+
+@{
+    ViewBag.Title = "Tracks";
+}
+
+<h2>Tracks</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameTrack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeToNextStop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusStops)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameTrack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeToNextStop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusStops)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NameTrack }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NameTrack }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NameTrack })
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create","Track")
+</p>

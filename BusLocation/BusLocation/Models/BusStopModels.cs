@@ -10,10 +10,38 @@ namespace BusLocation.Models
     {
         [Key]
         public int Id { get; set; }
-        public String Name { get; set; }
-        public String City { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public string City { get; set; }
+
+        [Required]
         public double Latitiude { get; set; } //Szerokość
+
+        [Required]
         public double Longitiude { get; set; } //Dlugosc
+
+        public BusStopModels()
+        {
+
+        }
+       public BusStopModels(string name, string city, double latitude, double longitiude)
+        {
+            Name = name;
+            City = city;
+            Latitiude = latitude;
+            Longitiude = longitiude;
+        }
+
+        public void Update(BusStopModels busStop)
+        {
+            Name = busStop.Name;
+            City = busStop.City;
+            Latitiude = busStop.Latitiude;
+            Longitiude = busStop.Longitiude;
+        }
 
     }
 }

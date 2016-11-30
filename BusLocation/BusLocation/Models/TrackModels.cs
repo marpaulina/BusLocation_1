@@ -9,9 +9,11 @@ namespace BusLocation.Models
     public class TrackModels
     {
         [Key]
-        public String Name { get; set; }
-        public List<BusStopModels> BusStops { get; set; }
+        public String NameTrack { get; set; }
+        [Required]
         public List<Int32> TimeToNextStop { get; set; }
+        public List<BusStopModels> BusStops { get; set; }
+       
 
     }
 }

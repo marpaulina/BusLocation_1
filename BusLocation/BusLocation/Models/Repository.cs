@@ -32,8 +32,6 @@ namespace BusLocation.Models
         }
         public void UpdateDriver(DriverModels driver)
         {
-            //_db.Entry(aExists).State = EntityState.Detached;
-            //dbContext.Entry(driver).State = EntityState.Detached;
             dbContext.Drivers.Find(driver.Id).Update(driver);
             dbContext.SaveChanges();
         }
@@ -43,10 +41,40 @@ namespace BusLocation.Models
         #region BUSSTOPS 
         public IEnumerable<BusStopModels> GetAllBusStops()
         {
-            throw new NotImplementedException();
+            return dbContext.BusStops.ToList();
+        }
+        public BusStopModels GetBusStopByID(int busStopId)
+        {
+            return dbContext.BusStops.Find(busStopId);
         }
 
+        public void AddBusStop(BusStopModels busStop)
+        {
+            dbContext.BusStops.Add(busStop);
+            dbContext.SaveChanges();
+    }
+
+        public void DeleteBusStopByID(int busStopId)
+        {
+            BusStopModels busStop = dbContext.BusStops.Find(busStopId);
+            dbContext.BusStops.Remove(busStop);
+            dbContext.SaveChanges();
+        }
+
+        public void UpdateBusStop(BusStopModels busStop)
+        {
+            dbContext.BusStops.Find(busStop.Id).Update(busStop);
+            dbContext.SaveChanges();
+        }
         #endregion
+        //************************************************ TRACKS
+        #region TRACKS
+        public IEnumerable<TrackModels> GetAllTracks()
+        {
+            return dbContext.Tracks.ToList();
+    }
+        #endregion
+
         //************************************************ ROUTES
         #region ROTES
         public IEnumerable<RouteModels> GetAllRoutes()
@@ -55,14 +83,7 @@ namespace BusLocation.Models
         }
 
         #endregion
-        //************************************************ TRACKS
-        #region TRACKS
-        public IEnumerable<TrackModels> GetAllTracks()
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
-
+       
         //************************************************
         public void Dispose()
         {
@@ -74,6 +95,6 @@ namespace BusLocation.Models
             throw new NotImplementedException();
         }
 
-     
+        
     }
 }
