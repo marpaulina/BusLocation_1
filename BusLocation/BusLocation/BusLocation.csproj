@@ -204,6 +204,18 @@
     <Compile Include="Migrations\201611302123104_BusStop poprawka 5.Designer.cs">
       <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612042158528_Upadate Track_1.cs" />
+    <Compile Include="Migrations\201612042158528_Upadate Track_1.Designer.cs">
+      <DependentUpon>201612042158528_Upadate Track_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612052340483_Update Track_2.cs" />
+    <Compile Include="Migrations\201612052340483_Update Track_2.Designer.cs">
+      <DependentUpon>201612052340483_Update Track_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612061744255_Update track_3.cs" />
+    <Compile Include="Migrations\201612061744255_Update track_3.Designer.cs">
+      <DependentUpon>201612061744255_Update track_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusStopModels.cs" />
@@ -316,6 +328,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611302123104_BusStop poprawka 5.resx">
       <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612042158528_Upadate Track_1.resx">
+      <DependentUpon>201612042158528_Upadate Track_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612052340483_Update Track_2.resx">
+      <DependentUpon>201612052340483_Update Track_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612061744255_Update track_3.resx">
+      <DependentUpon>201612061744255_Update track_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

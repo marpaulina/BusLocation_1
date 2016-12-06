@@ -19,10 +19,31 @@ namespace BusLocation.Controllers
         {
             return View(repo.GetAllTracks());
         }
-
-        public ActionResult Create()
+        [HttpPost]
+        public ActionResult Tracks(TrackModels model)
         {
-            return View();
+            return View(model);
+        }
+
+        public ActionResult CreateTrack()
+        {
+            List<BusStopModels> busStops = (List<BusStopModels>) repo.GetAllBusStops(); 
+            ViewBag.BusStops = busStops;
+            return View("Create");
+        }
+
+        [HttpPost]
+        public ActionResult CreateTrack(TrackModels model)
+        {
+            //repo.AddTrack(model);
+           
+            return View("Create", repo.GetAllTracks());
+        }
+        [HttpPost]
+        public ActionResult AddBusStop(TrackModels model)
+        {
+            //repo.AddTrack(model);
+            return View("Create", repo.GetAllTracks());
         }
     }
 }

@@ -20,8 +20,10 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.NameTrack)
@@ -33,14 +35,15 @@
             @Html.DisplayFor(modelItem => item.BusStops)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.NameTrack }) |
-            @Html.ActionLink("Details", "Details", new { id=item.NameTrack }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.NameTrack })
+            @Html.ActionLink("Edit", "Edit", new { id = item.NameTrack }) |
+            @Html.ActionLink("Details", "Details", new { id = item.NameTrack }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NameTrack })
         </td>
     </tr>
+    }
 }
 
 </table>
 <p>
-    @Html.ActionLink("Create New", "Create","Track")
+    @Html.ActionLink("Create New", "CreateTrack","Track")
 </p>

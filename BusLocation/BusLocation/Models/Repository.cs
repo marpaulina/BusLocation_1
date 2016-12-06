@@ -6,11 +6,11 @@ using System.Data.Entity;
 
 namespace BusLocation.Models
 {
-    public class Repository: IRepository
+    public class Repository : IRepository
     {
         public static ApplicationDbContext dbContext = new ApplicationDbContext();
         //***************************************************** DRIVERS
-#region DRIVERS
+        #region DRIVERS
         public void AddDriver(DriverModels driver)
         {
             dbContext.Drivers.Add(driver);
@@ -26,7 +26,7 @@ namespace BusLocation.Models
         {
             return dbContext.Drivers.ToList();
         }
-         public DriverModels GetDriverByID(int driverId)
+        public DriverModels GetDriverByID(int driverId)
         {
             return dbContext.Drivers.Find(driverId);
         }
@@ -47,12 +47,16 @@ namespace BusLocation.Models
         {
             return dbContext.BusStops.Find(busStopId);
         }
+        public BusStopModels GetBusStopByName(string  busStopName)
+        {
+            return dbContext.BusStops.Find(busStopName);
+        }
 
         public void AddBusStop(BusStopModels busStop)
         {
             dbContext.BusStops.Add(busStop);
             dbContext.SaveChanges();
-    }
+        }
 
         public void DeleteBusStopByID(int busStopId)
         {
@@ -72,7 +76,39 @@ namespace BusLocation.Models
         public IEnumerable<TrackModels> GetAllTracks()
         {
             return dbContext.Tracks.ToList();
-    }
+        }
+        public TrackModels GetTrackByID(string nameTrack)
+        {
+            return dbContext.Tracks.Find(nameTrack);
+        }
+
+        public void AddTrack(TrackModels track)
+        {
+            dbContext.Tracks.Add(track);
+            dbContext.SaveChanges();
+        }
+
+        public void DeleteTrackByID(string nameTrack)
+        {
+            TrackModels track = dbContext.Tracks.Find(nameTrack);
+            dbContext.Tracks.Remove(track);
+            dbContext.SaveChanges();
+        }
+
+        public void UpdateTrack(TrackModels track)
+        {
+            dbContext.Tracks.Find(track.NameTrack).Update(track);
+            dbContext.SaveChanges();
+        }
+        public List<BusStopModels> GetBusStopsFromTrack(string nameTrack)
+        {
+            return dbContext.Tracks.Find(nameTrack).BusStops;
+        }
+
+        public List<int> GetTimeList(string nameTrack)
+        {
+            return dbContext.Tracks.Find(nameTrack).TimeToNextStop;
+        }
         #endregion
 
         //************************************************ ROUTES
@@ -83,7 +119,7 @@ namespace BusLocation.Models
         }
 
         #endregion
-       
+
         //************************************************
         public void Dispose()
         {
@@ -94,7 +130,5 @@ namespace BusLocation.Models
         {
             throw new NotImplementedException();
         }
-
-        
     }
 }

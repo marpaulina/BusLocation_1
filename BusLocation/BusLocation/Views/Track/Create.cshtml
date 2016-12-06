@@ -1,14 +1,19 @@
 ﻿@model BusLocation.Models.TrackModels
+@using BusLocation.Models
+
+
+
 
 @{
     ViewBag.Title = "Create";
+    //List<SelectListItem> items = ViewBag.items;
+    List<BusStopModels> busStops = ViewBag.BusStops;
 }
 
 <h2>Create</h2>
 
 
-
-@using (Html.BeginForm("Create", "Track", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("CreateTrack", "Track", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     
@@ -18,31 +23,85 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.NameTrack, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-4">
                 @Html.EditorFor(model => model.NameTrack, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NameTrack, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.NameTrack, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NameTrack, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NameTrack, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.BusStopId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <select class="form-control" name="BusStopsListIds" size="1">
+                    @foreach (var busStop in busStops)
+                    {
+                        <option value="@busStop.Id">@busStop.Name </option>
+                    }
+                </select>
             </div>
+           @Html.LabelFor(model => model.TimeToNextStop, htmlAttributes: new { @class = "control-label col-md-2" })
+           <div class="col-md-4">
+                @Html.EditorFor(model => model.TimeToNext, new { htmlAttributes = new { @class = "form-control" } })
+           </div>
+          
+      </div>
+      <div class="form-group">
+        <div style='float:right;'>
+            @Html.ActionLink("Dodaj Przystanek", "AddBusStop", "Track"@*, /new { id = item.Id }, null*@)
         </div>
+      </div>
+      <div class="form-group">
+        <div>
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+      </div>
+   </div>
+}
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+@*VIEW BUSSTOP*@
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nazwa")
+        </th>
+        <th>
+            @Html.DisplayName("Miejscowość")
+        </th>
+        <th>
+            @Html.DisplayName("Współrzędne")
+        </th>
+        <th>
+            @Html.DisplayName("geograficzne")
+        </th>
+        <th></th>
+    </tr>
+    @if (Model.BusStops != null)
+    {
+        foreach (var item in Model.BusStops)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Latitiude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitiude)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "BusStop", new { id = item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "BusStop", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
