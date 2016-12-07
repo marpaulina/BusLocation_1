@@ -176,45 +176,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611291438494_InitialCreate.cs" />
-    <Compile Include="Migrations\201611291438494_InitialCreate.Designer.cs">
-      <DependentUpon>201611291438494_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201612061824415_InitialCreate.cs" />
+    <Compile Include="Migrations\201612061824415_InitialCreate.Designer.cs">
+      <DependentUpon>201612061824415_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611291500141_InitialCreate1.cs" />
-    <Compile Include="Migrations\201611291500141_InitialCreate1.Designer.cs">
-      <DependentUpon>201611291500141_InitialCreate1.cs</DependentUpon>
+    <Compile Include="Migrations\201612062157561_update track_1.cs" />
+    <Compile Include="Migrations\201612062157561_update track_1.Designer.cs">
+      <DependentUpon>201612062157561_update track_1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611301837350_BusStop poprawka.cs" />
-    <Compile Include="Migrations\201611301837350_BusStop poprawka.Designer.cs">
-      <DependentUpon>201611301837350_BusStop poprawka.cs</DependentUpon>
+    <Compile Include="Migrations\201612062304504_update track_2.cs" />
+    <Compile Include="Migrations\201612062304504_update track_2.Designer.cs">
+      <DependentUpon>201612062304504_update track_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611302025433_BusStop poprawka2.cs" />
-    <Compile Include="Migrations\201611302025433_BusStop poprawka2.Designer.cs">
-      <DependentUpon>201611302025433_BusStop poprawka2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611302038032_BusStop poprawka 3.cs" />
-    <Compile Include="Migrations\201611302038032_BusStop poprawka 3.Designer.cs">
-      <DependentUpon>201611302038032_BusStop poprawka 3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611302112200_BusStop poprawka 4.cs" />
-    <Compile Include="Migrations\201611302112200_BusStop poprawka 4.Designer.cs">
-      <DependentUpon>201611302112200_BusStop poprawka 4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611302123104_BusStop poprawka 5.cs" />
-    <Compile Include="Migrations\201611302123104_BusStop poprawka 5.Designer.cs">
-      <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612042158528_Upadate Track_1.cs" />
-    <Compile Include="Migrations\201612042158528_Upadate Track_1.Designer.cs">
-      <DependentUpon>201612042158528_Upadate Track_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612052340483_Update Track_2.cs" />
-    <Compile Include="Migrations\201612052340483_Update Track_2.Designer.cs">
-      <DependentUpon>201612052340483_Update Track_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612061744255_Update track_3.cs" />
-    <Compile Include="Migrations\201612061744255_Update track_3.Designer.cs">
-      <DependentUpon>201612061744255_Update track_3.cs</DependentUpon>
+    <Compile Include="Migrations\201612062310400_update track_3.cs" />
+    <Compile Include="Migrations\201612062310400_update track_3.Designer.cs">
+      <DependentUpon>201612062310400_update track_3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,35 +284,17 @@
     <Analyzer Include="..\packages\RefactoringEssentials.4.4.0\analyzers\dotnet\RefactoringEssentials.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611291438494_InitialCreate.resx">
-      <DependentUpon>201611291438494_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612061824415_InitialCreate.resx">
+      <DependentUpon>201612061824415_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611291500141_InitialCreate1.resx">
-      <DependentUpon>201611291500141_InitialCreate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612062157561_update track_1.resx">
+      <DependentUpon>201612062157561_update track_1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301837350_BusStop poprawka.resx">
-      <DependentUpon>201611301837350_BusStop poprawka.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612062304504_update track_2.resx">
+      <DependentUpon>201612062304504_update track_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611302025433_BusStop poprawka2.resx">
-      <DependentUpon>201611302025433_BusStop poprawka2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611302038032_BusStop poprawka 3.resx">
-      <DependentUpon>201611302038032_BusStop poprawka 3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611302112200_BusStop poprawka 4.resx">
-      <DependentUpon>201611302112200_BusStop poprawka 4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611302123104_BusStop poprawka 5.resx">
-      <DependentUpon>201611302123104_BusStop poprawka 5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612042158528_Upadate Track_1.resx">
-      <DependentUpon>201612042158528_Upadate Track_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612052340483_Update Track_2.resx">
-      <DependentUpon>201612052340483_Update Track_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612061744255_Update track_3.resx">
-      <DependentUpon>201612061744255_Update track_3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612062310400_update track_3.resx">
+      <DependentUpon>201612062310400_update track_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

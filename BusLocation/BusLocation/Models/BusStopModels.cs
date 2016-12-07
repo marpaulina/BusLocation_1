@@ -22,6 +22,8 @@ namespace BusLocation.Models
 
         [Required]
         public double Longitiude { get; set; } //Dlugosc
+        
+        public virtual List<TrackModels> Tracks { get; set; }
 
         public BusStopModels()
         {

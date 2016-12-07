@@ -7,13 +7,13 @@ namespace BusLocation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class BusStoppoprawka3 : IMigrationMetadata
+    public sealed partial class updatetrack_3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(BusStoppoprawka3));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatetrack_3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611302038032_BusStop poprawka 3"; }
+            get { return "201612062310400_update track_3"; }
         }
         
         string IMigrationMetadata.Source

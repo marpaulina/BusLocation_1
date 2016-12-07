@@ -69,12 +69,6 @@ C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debu
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.pdb
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.InitialCreate.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.csproj.GenerateResource.Cache
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.InitialCreate1.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.BusStoppoprawka.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.BusStoppoprawka2.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.BusStoppoprawka3.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.BusStoppoprawka4.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.BusStoppoprawka5.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.UpadateTrack_1.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.UpdateTrack_2.resources
-C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Updatetrack_3.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_1.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_2.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_3.resources

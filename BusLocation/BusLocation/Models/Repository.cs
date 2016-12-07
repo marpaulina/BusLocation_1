@@ -73,42 +73,55 @@ namespace BusLocation.Models
         #endregion
         //************************************************ TRACKS
         #region TRACKS
-        public IEnumerable<TrackModels> GetAllTracks()
+        public List<TrackModels> GetAllTracks()
         {
             return dbContext.Tracks.ToList();
         }
-        public TrackModels GetTrackByID(string nameTrack)
+        public TrackModels GetTrackByID(int trackID)
         {
-            return dbContext.Tracks.Find(nameTrack);
+            return dbContext.Tracks.Find(trackID);
         }
 
         public void AddTrack(TrackModels track)
         {
-            dbContext.Tracks.Add(track);
+            TrackModels track2 = new TrackModels(track.NameTrack, track.BusStopId, track.TimeToNext);
+            dbContext.Tracks.Add(track2);
             dbContext.SaveChanges();
         }
 
-        public void DeleteTrackByID(string nameTrack)
+        public void DeleteTrackByID(int trackID)
         {
-            TrackModels track = dbContext.Tracks.Find(nameTrack);
+            TrackModels track = dbContext.Tracks.Find(trackID);
             dbContext.Tracks.Remove(track);
             dbContext.SaveChanges();
         }
 
         public void UpdateTrack(TrackModels track)
         {
-            dbContext.Tracks.Find(track.NameTrack).Update(track);
+            dbContext.Tracks.Find(track.Id).Update(track);
             dbContext.SaveChanges();
         }
-        public List<BusStopModels> GetBusStopsFromTrack(string nameTrack)
+        public void UpdateTrack(TrackModels track, List<BusStopModels> b)
         {
-            return dbContext.Tracks.Find(nameTrack).BusStops;
+            dbContext.Tracks.Find(track.Id).Update(track, b);
+            dbContext.SaveChanges();
+        }
+        public List<BusStopModels> GetBusStopsFromTrack(int trackID)
+        {
+            return dbContext.Tracks.Find(trackID).BusStops;
         }
 
-        public List<int> GetTimeList(string nameTrack)
+        public List<int> GetTimeList(int trackID)
         {
-            return dbContext.Tracks.Find(nameTrack).TimeToNextStop;
+            return dbContext.Tracks.Find(trackID).TimeToNextStop;
         }
+        public TrackModels GetLastTrack()
+        {
+
+            return GetAllTracks()[GetAllTracks().Count-1] ; 
+        }
+
+
         #endregion
 
         //************************************************ ROUTES
@@ -130,5 +143,7 @@ namespace BusLocation.Models
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

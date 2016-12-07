@@ -7,13 +7,13 @@ namespace BusLocation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UpadateTrack_1 : IMigrationMetadata
+    public sealed partial class updatetrack_1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpadateTrack_1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatetrack_1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612042158528_Upadate Track_1"; }
+            get { return "201612062157561_update track_1"; }
         }
         
         string IMigrationMetadata.Source

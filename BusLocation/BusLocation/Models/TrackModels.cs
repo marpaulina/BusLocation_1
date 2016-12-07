@@ -10,13 +10,15 @@ namespace BusLocation.Models
     public class TrackModels
     {
         [Key]
+        public int Id { get; set; }
+
         [Required]
         public String NameTrack { get; set; }
       
         [Display(Name = "Czas do nastepnego przystanku")]
         public List<int> TimeToNextStop { get; set; }
       
-        public List<BusStopModels> BusStops { get; set; }
+        public virtual List<BusStopModels> BusStops { get; set; }
 
         [Required]
         [Display(Name = "Bus Stops")]
@@ -28,15 +30,17 @@ namespace BusLocation.Models
 
 
         Repository repo = new Repository();
-        TrackModels()
+        public TrackModels()
         {
             //empty
         }
 
-        TrackModels(string nameTrack, int busStop, int timeToNext)
+        public TrackModels(string nameTrack, int busStop, int timeToNext)
         {
             NameTrack = nameTrack;
+            TimeToNextStop = new List<int>();
             TimeToNextStop.Add(timeToNext);
+            BusStops = new List<BusStopModels>();
             BusStops.Add(repo.GetBusStopByID(busStop));
         }
         //TrackModels(string nameTrack, List<int> timeToNeztStop, List<BusStopModels> busStops)
@@ -68,6 +72,10 @@ namespace BusLocation.Models
             NameTrack = track.NameTrack;
             TimeToNextStop = track.TimeToNextStop;
             BusStops = track.BusStops;
+        }
+        public void Update(TrackModels track, List<BusStopModels> b)
+        {
+            BusStops = b;
         }
 
     }

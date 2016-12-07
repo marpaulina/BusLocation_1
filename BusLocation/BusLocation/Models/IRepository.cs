@@ -28,13 +28,14 @@ namespace BusLocation.Models
         #endregion
 
         #region Track
-        IEnumerable<TrackModels> GetAllTracks();
-        TrackModels GetTrackByID(string nameTrack);
+        List<TrackModels> GetAllTracks();
+        TrackModels GetTrackByID(int trackID);
         void AddTrack(TrackModels track);
-        void DeleteTrackByID(string nameTrack);
+        void DeleteTrackByID(int trackID);
         void UpdateTrack(TrackModels track);
-        List<BusStopModels> GetBusStopsFromTrack(string nameTrack);
-        List<int> GetTimeList(string nameTrack);
+        List<BusStopModels> GetBusStopsFromTrack(int trackID);
+        List<int> GetTimeList(int trackID);
+        TrackModels GetLastTrack();
 
         #endregion
 
