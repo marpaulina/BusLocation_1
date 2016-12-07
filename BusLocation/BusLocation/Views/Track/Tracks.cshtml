@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<BusLocation.Models.TrackModels>
+@using BusLocation.Models
 
 @{
     ViewBag.Title = "Tracks";
@@ -13,10 +14,10 @@
             @Html.DisplayNameFor(model => model.NameTrack)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeToNextStop)
+            @Html.DisplayNameFor(model => model.BusStops)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BusStops)
+            @Html.DisplayNameFor(model => model.TimeToNextStop)
         </th>
         <th></th>
     </tr>
@@ -29,14 +30,27 @@
             @Html.DisplayFor(modelItem => item.NameTrack)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeToNextStop)
+            <ul>
+                @foreach (var busStop in item.BusStops)
+                {
+                    // cut for brevity, need to add back more code from original
+                    <li>@busStop.Name</li>
+                }
+            </ul>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BusStops)
+        @if (item.TimeToNextStop != null)
+        {
+            <ul>
+                @foreach (var time in item.TimeToNextStop)
+                {
+                    <li>@time.ToString()</li>
+                }
+            </ul>
+        }
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
             @Html.ActionLink("Delete", "DeleteTrack", new { id = item.Id })
         </td>
     </tr>

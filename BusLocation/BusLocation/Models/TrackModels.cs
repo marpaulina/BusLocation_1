@@ -13,15 +13,18 @@ namespace BusLocation.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Nazwa trasy")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna nazwa trasy.")]
         public String NameTrack { get; set; }
       
         [Display(Name = "Czas do nastepnego przystanku")]
         public List<int> TimeToNextStop { get; set; }
-      
+
+        [Display(Name = "Przystanki")]
         public virtual List<BusStopModels> BusStops { get; set; }
 
         [Required]
-        [Display(Name = "Bus Stops")]
+        [Display(Name = "Przystanek")]
         public int BusStopId { get; set; }
 
         [Required]
@@ -43,39 +46,18 @@ namespace BusLocation.Models
             BusStops = new List<BusStopModels>();
             BusStops.Add(repo.GetBusStopByID(busStop));
         }
-        //TrackModels(string nameTrack, List<int> timeToNeztStop, List<BusStopModels> busStops)
-        //{
-        //    NameTrack = nameTrack;
-        //    TimeToNextStop = timeToNeztStop;
-        //    BusStops = busStops;
-        //}
-        //TrackModels(string nameTrack, int timeToNeztStop, BusStopModels busStops)
-        //{
-        //    NameTrack = nameTrack;
-        //    TimeToNextStop.Add(timeToNeztStop);
-        //    BusStops.Add(busStops);
-        //}
-        //TrackModels(string nameTrack, byte timeToNeztStop, string busStopName)
-        //{
-        //    NameTrack = nameTrack;
-        //    TimeToNextStop.Add(timeToNeztStop);
-        //    BusStops.Add(repo.GetBusStopByName(busStopName));
-        //}
-        //TrackModels(string nameTrack, string busStopName, byte timeToNeztStop)
-        //{
-        //    NameTrack = nameTrack;
-        //    TimeToNextStop.Add(timeToNeztStop);
-        //    BusStops.Add(repo.GetBusStopByName(busStopName));
-        //}
+
         public void Update(TrackModels track)
         {
             NameTrack = track.NameTrack;
             TimeToNextStop = track.TimeToNextStop;
             BusStops = track.BusStops;
         }
-        public void Update(TrackModels track, List<BusStopModels> b)
+
+        public void Update(TrackModels track, List<BusStopModels> b, List<int> time)
         {
             BusStops = b;
+            TimeToNextStop = time;
         }
 
     }

@@ -75,7 +75,7 @@ namespace BusLocation.Models
         #region TRACKS
         public List<TrackModels> GetAllTracks()
         {
-            return dbContext.Tracks.ToList();
+            return (List<TrackModels>) dbContext.Tracks.ToList();
         }
         public TrackModels GetTrackByID(int trackID)
         {
@@ -101,9 +101,9 @@ namespace BusLocation.Models
             dbContext.Tracks.Find(track.Id).Update(track);
             dbContext.SaveChanges();
         }
-        public void UpdateTrack(TrackModels track, List<BusStopModels> b)
+        public void UpdateTrack(TrackModels track, List<BusStopModels> b, List <int> time)
         {
-            dbContext.Tracks.Find(track.Id).Update(track, b);
+            dbContext.Tracks.Find(track.Id).Update(track, b, time);
             dbContext.SaveChanges();
         }
         public List<BusStopModels> GetBusStopsFromTrack(int trackID)

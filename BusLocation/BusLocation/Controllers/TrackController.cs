@@ -48,16 +48,29 @@ namespace BusLocation.Controllers
                 {
                     List<BusStopModels> b = repo.GetLastTrack().BusStops;
                     b.Add(repo.GetBusStopByID(model.BusStopId));
-                    repo.UpdateTrack(repo.GetLastTrack(), b);
+
+                    List<int> time = repo.GetLastTrack().TimeToNextStop;
+                    time.Add(model.TimeToNext);
+                    
+                    repo.UpdateTrack(repo.GetLastTrack(), b, time);
                 }
                 return View(repo.GetLastTrack());
             }
             else
             {
-                return View("Tracks", repo.GetLastTrack());
+                if (repo.GetLastTrack().BusStops.Count > 1)
+                {
+                    repo.GetLastTrack().TimeToNextStop.Remove(repo.GetLastTrack().TimeToNextStop.Count - 1);
+                    return View("Tracks", repo.GetAllTracks());
+                }
+                else
+                {
+                    ViewBag.Crete = "Trasu musi zawierac conajmniej dwa przystanki";
+                    return View(repo.GetLastTrack());
+                }
             }
-
         }
+
         [HttpPost]
         public ActionResult AddBusStop( TrackModels model)
         {
@@ -98,6 +111,35 @@ namespace BusLocation.Controllers
             repo.DeleteTrackByID(id);
             return View("Tracks", repo.GetAllTracks());
         }
-       
+        public ActionResult Edit(int id)
+        {
+            List<BusStopModels> busStops = (List<BusStopModels>)repo.GetAllBusStops();
+            ViewBag.BusStops = busStops;
+            return View(repo.GetTrackByID(id));
+        }
+
+        [HttpPost]
+        public ActionResult Edit(string add, string save, TrackModels model)
+        {
+            List<BusStopModels> busStops = (List<BusStopModels>)repo.GetAllBusStops();
+            ViewBag.BusStops = busStops;
+
+            if (add != null)
+            {
+                List<BusStopModels> b = repo.GetTrackByID(model.Id).BusStops;
+                b.Add(repo.GetBusStopByID(model.BusStopId));
+
+                List<int> time = repo.GetTrackByID(model.Id).TimeToNextStop;
+                time.Add(model.TimeToNext);
+
+                repo.UpdateTrack(repo.GetLastTrack(), b, time);
+
+                return View(repo.GetLastTrack());
+            }
+            else
+            {
+                return View("Tracks", repo.GetAllTracks());
+            }
+        }
     }
 }

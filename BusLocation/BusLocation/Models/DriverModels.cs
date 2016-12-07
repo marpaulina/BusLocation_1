@@ -14,15 +14,22 @@ namespace BusLocation.Models
        public int Id { get; set; }
 
        [Required]
-       public string Name { get; set; }
+       [Display(Name = "Imie")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędne imie.")]
+        public string Name { get; set; }
 
        [Required]
+       [Display(Name = "Nazwisko")]
+       [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędne nazwisko.")]
        public string Surname { get; set; }
 
        [Required]
-       public string Nick { get; set; }
+       [Display(Name = "Login")]
+        [RegularExpression("^[a-zA-Z0-9]+([._]?[a-zA-Z0-9]+)*$", ErrorMessage = "Login musi zawierać conajmniej jedną liczbę, litere, znak specjalny (min. 8 znaków).")]
+        public string Nick { get; set; }
 
        [Required]
+       [Display(Name = "Hasło")]
        [DataType(DataType.Password)]
        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         public string Password { get; set; }

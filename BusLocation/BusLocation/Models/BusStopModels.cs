@@ -12,15 +12,19 @@ namespace BusLocation.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Nazwa")]
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Miejscowość")]
         public string City { get; set; }
 
         [Required]
+        [Display(Name = "Szerokość geo")]
         public double Latitiude { get; set; } //Szerokość
 
         [Required]
+        [Display(Name = "Długość geo")]
         public double Longitiude { get; set; } //Dlugosc
         
         public virtual List<TrackModels> Tracks { get; set; }

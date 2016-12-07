@@ -10,7 +10,11 @@ namespace BusLocation.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Trasa")]
         public TrackModels  Track { get; set; }
+
+        [Display(Name = "Czas połączenia")]
         public TimeSpan StartTime { get; set; }
     }
 }
