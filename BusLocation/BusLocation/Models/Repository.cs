@@ -126,9 +126,35 @@ namespace BusLocation.Models
 
         //************************************************ ROUTES
         #region ROTES
-        public IEnumerable<RouteModels> GetAllRoutes()
+        public List<RouteModels> GetAllRoutes()
         {
-            throw new NotImplementedException();
+            return (List<RouteModels>)dbContext.Routes.ToList();
+        }
+        
+
+        public RouteModels GetRouteByID(int routeID)
+        {
+            return dbContext.Routes.Find(routeID);
+        }
+
+        public void AddRoute(RouteModels route)
+        {
+            RouteModels route2 = new RouteModels(route.StartTime, route.TrackId);
+            dbContext.Routes.Add(route2);
+            dbContext.SaveChanges();
+        }
+
+        public void DeleteRouteByID(int routeID)
+        {
+            RouteModels r = GetRouteByID(routeID);
+            dbContext.Routes.Remove(r);
+            dbContext.SaveChanges();
+        }
+
+        public void UpdateRoute(RouteModels route)
+        {
+            dbContext.Routes.Find(route.Id).Update(route);
+            dbContext.SaveChanges();
         }
 
         #endregion
@@ -144,6 +170,6 @@ namespace BusLocation.Models
             throw new NotImplementedException();
         }
 
-       
+        
     }
 }

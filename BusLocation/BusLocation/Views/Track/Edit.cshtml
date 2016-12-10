@@ -2,7 +2,7 @@
 @using BusLocation.Models
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edytuj trase";
     List<BusStopModels> busStops = ViewBag.BusStops;
 }
 
@@ -85,7 +85,7 @@
                         @Html.DisplayFor(modelItem => item.Longitiude)
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "Delete", "Track", new { id = item.Id }, null)
+                        @Html.ActionLink("Usuń", "Delete", "Track", new { id = item.Id }, null)
                     </td>
                 </tr>
             }
@@ -97,7 +97,7 @@
 
     <div class="form-group">
         <div>
-            <input type="submit" name="save" value="Save" class="btn btn-default" />
+            <input type="submit" name="save" value="Zapisz" class="btn btn-default" />
         </div>
     </div>
 

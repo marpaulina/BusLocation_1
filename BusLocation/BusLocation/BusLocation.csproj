@@ -172,6 +172,7 @@
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +192,18 @@
     <Compile Include="Migrations\201612062310400_update track_3.cs" />
     <Compile Include="Migrations\201612062310400_update track_3.Designer.cs">
       <DependentUpon>201612062310400_update track_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612082050142_Update Route 1.cs" />
+    <Compile Include="Migrations\201612082050142_Update Route 1.Designer.cs">
+      <DependentUpon>201612082050142_Update Route 1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612082202239_Update route 2.cs" />
+    <Compile Include="Migrations\201612082202239_Update route 2.Designer.cs">
+      <DependentUpon>201612082202239_Update route 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612102115429_Route 2.cs" />
+    <Compile Include="Migrations\201612102115429_Route 2.Designer.cs">
+      <DependentUpon>201612102115429_Route 2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +282,9 @@
     <Content Include="Views\Track\Tracks.cshtml" />
     <Content Include="Views\Track\Create.cshtml" />
     <Content Include="Views\Track\Edit.cshtml" />
+    <Content Include="Views\Route\Routes.cshtml" />
+    <Content Include="Views\Route\Create.cshtml" />
+    <Content Include="Views\Route\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,6 +312,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612062310400_update track_3.resx">
       <DependentUpon>201612062310400_update track_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612082050142_Update Route 1.resx">
+      <DependentUpon>201612082050142_Update Route 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612082202239_Update route 2.resx">
+      <DependentUpon>201612082202239_Update route 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612102115429_Route 2.resx">
+      <DependentUpon>201612102115429_Route 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,7 +17,8 @@ namespace BusLocation.Controllers
         }
         public ActionResult Tracks()
         {
-            return View(repo.GetAllTracks());
+            List<TrackModels> t = repo.GetAllTracks();
+            return View(t);
         }
         [HttpPost]
         public ActionResult Tracks(TrackModels model)

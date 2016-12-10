@@ -2,7 +2,7 @@
 @using BusLocation.Models
 
 @{
-    ViewBag.Title = "Tracks";
+    ViewBag.Title = "Trasy";
 }
 
 <h2>Tracks</h2>
@@ -33,7 +33,6 @@
             <ul>
                 @foreach (var busStop in item.BusStops)
                 {
-                    // cut for brevity, need to add back more code from original
                     <li>@busStop.Name</li>
                 }
             </ul>
@@ -50,8 +49,8 @@
         }
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "DeleteTrack", new { id = item.Id })
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Usuń", "DeleteTrack", new { id = item.Id })
         </td>
     </tr>
     }
@@ -59,5 +58,5 @@
 
 </table>
 <p>
-    @Html.ActionLink("Create New", "Create","Track")
+    @Html.ActionLink("Stwórz trase", "Create","Track")
 </p>

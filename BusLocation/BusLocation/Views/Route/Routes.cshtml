@@ -1,0 +1,43 @@
+﻿@model List<BusLocation.Models.RouteModels>
+@using BusLocation.Models
+
+@{
+    ViewBag.Title = "Połączenia";
+}
+
+<h2>Routes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Godzina odjazdu")
+        </th>
+        <th>
+            @Html.Label("Trasa")
+        </th>
+        <th></th>
+    </tr>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+               @if(item.Track != null)
+                {
+               @Html.Label(item.Track.NameTrack)
+                }
+            <td>
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+}
+</table>
+<p>
+    @Html.ActionLink("Stwórz połączenie", "Create","Route")
+</p>

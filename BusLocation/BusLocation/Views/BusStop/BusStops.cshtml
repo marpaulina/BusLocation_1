@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BusLocation.Models.BusStopModels>
 
 @{
-    ViewBag.Title = "BusStops";
+    ViewBag.Title = "Przystanki";
 }
 
 <h2>BusStops</h2>
@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.Longitiude)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", "BusStop", new { id = item.Id }, null) |
-            @Html.ActionLink("Delete", "Delete", "BusStop", new { id = item.Id }, null)
+            @Html.ActionLink("Edytuj", "Edit", "BusStop", new { id = item.Id }, null) |
+            @Html.ActionLink("Usuń", "Delete", "BusStop", new { id = item.Id }, null)
         </td>
     </tr>
     }
@@ -51,5 +51,5 @@
 </table>
 
 <p>
-    @Html.ActionLink("Create New", "Create","BusStop")
+    @Html.ActionLink("Stwórz przystanek", "Create","BusStop")
 </p>

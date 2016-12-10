@@ -2,7 +2,7 @@
 
 
 @{
-    ViewBag.Title = "Drivers";
+    ViewBag.Title = "Kierowcy";
 }
 
 <h2>Drivers</h2>
@@ -39,13 +39,13 @@
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", "Driver", new { id = item.Id }, null) |
-                    @Html.ActionLink("Delete", "Delete", "Driver", new { id = item.Id }, null)
+                    @Html.ActionLink("Edytuj", "Edit", "Driver", new { id = item.Id }, null) |
+                    @Html.ActionLink("Usuń", "Delete", "Driver", new { id = item.Id }, null)
                 </td>
             </tr>
       }
     }   
 </table>
 <p>
-    @Html.ActionLink("Create New", "Create", "Driver")
+    @Html.ActionLink("Dodaj kierowce", "Create", "Driver")
 </p>

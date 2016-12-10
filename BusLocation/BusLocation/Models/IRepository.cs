@@ -40,7 +40,11 @@ namespace BusLocation.Models
         #endregion
 
         #region Route
-        IEnumerable<RouteModels> GetAllRoutes();
+        List<RouteModels> GetAllRoutes();
+        RouteModels GetRouteByID(int routeID);
+        void AddRoute(RouteModels route);
+        void DeleteRouteByID(int routeID);
+        void UpdateRoute(RouteModels route);
         #endregion
 
         void Save();

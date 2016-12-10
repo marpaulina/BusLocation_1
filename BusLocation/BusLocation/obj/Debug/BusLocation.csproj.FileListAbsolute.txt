@@ -72,3 +72,6 @@ C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debu
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_1.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_2.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.updatetrack_3.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.UpdateRoute1.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Updateroute2.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Route2.resources

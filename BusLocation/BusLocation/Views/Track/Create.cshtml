@@ -2,7 +2,7 @@
 @using BusLocation.Models
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Tworzenie trasy";
     List<BusStopModels> busStops = ViewBag.BusStops;
 }
 
@@ -84,20 +84,16 @@
                         @Html.DisplayFor(modelItem => item.Longitiude)
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "Delete", "Track", new { id = item.Id }, null)
+                        @Html.ActionLink("Usuń", "Delete", "Track", new { id = item.Id }, null)
                     </td>
                 </tr>
             }
         }
     </table>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 
     <div class="form-group">
         <div>
-            <input type="submit" name="create" value="Create" class="btn btn-default" />
-            @ViewBag.Crete;
+            <input type="submit" name="create" value="Dodaj" class="btn btn-default" />
         </div>
     </div>
 
