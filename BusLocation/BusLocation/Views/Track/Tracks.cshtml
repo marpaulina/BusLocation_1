@@ -14,7 +14,7 @@
             @Html.DisplayNameFor(model => model.BusStopsList)
         </th>
         <th>
-            @Html.Display("Czas do następnego przystaku")
+            @Html.DisplayNameFor(model => model.TimeToNextStopsList)
         </th>
         <th></th>
     </tr>
@@ -28,14 +28,25 @@
         </td>
         <td>
             <ul>
-                @foreach (var busStop in item.BusStopsList)
+                @if(item.BusStopsList != null)
                 {
-                    <li>@busStop.Name</li>
+                    foreach (var busStop in item.BusStopsList)
+                    {
+                        <li>@busStop.Name</li>
+                    }
                 }
             </ul>
         </td>
         <td>
-        
+            <ul>
+                @if (item.TimeToNextStopsList != null)
+                {
+                    foreach (var time in item.TimeToNextStopsList)
+                    {
+                        <li>@time.value</li>
+                    }
+                }
+            </ul>
         </td>
         <td>
             @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |

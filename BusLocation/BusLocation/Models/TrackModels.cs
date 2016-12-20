@@ -15,7 +15,7 @@ namespace BusLocation.Models
         public String NameTrack { get; set; }
       
         [Display(Name = "Czas do nastepnego przystanku")]
-        public List<TimeModels> TimeToNextStopsList { get; set; }
+        public virtual List<TimeModels> TimeToNextStopsList { get; set; }
 
         [Display(Name = "Przystanki")]
         public virtual List<BusStopModels> BusStopsList { get; set; }
@@ -51,11 +51,12 @@ namespace BusLocation.Models
             BusStopsList = track.BusStopsList;
         }
 
-        public void Update(TrackModels track, List<BusStopModels> b, List<TimeModels> time)
-        {
-            BusStopsList = b;
-            TimeToNextStopsList = time;
-        }
+        //public void Update(TrackModels track, List<BusStopModels> b, List<TimeModels> time)
+        //{
+        //    NameTrack = track.NameTrack;
+        //    BusStopsList = b;
+        //    TimeToNextStopsList = time;
+        //}
 
     }
 }

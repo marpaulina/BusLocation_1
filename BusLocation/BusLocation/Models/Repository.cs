@@ -81,6 +81,17 @@ namespace BusLocation.Models
         {
             return dbContext.Tracks.Find(trackID);
         }
+        public TrackModels GetTrackByName(String trackName)
+        { 
+            foreach(TrackModels track in GetAllTracks())
+            {
+                if (track.NameTrack.Equals(trackName))
+                { 
+                    return track;
+                }
+            }
+            return null;
+        }
 
         public void AddTrack(TrackModels track)
         {
@@ -101,11 +112,6 @@ namespace BusLocation.Models
             dbContext.Tracks.Find(track.Id).Update(track);
             dbContext.SaveChanges();
         }
-        public void UpdateTrack(TrackModels track, List<BusStopModels> b, List <TimeModels> time)
-        {
-            dbContext.Tracks.Find(track.Id).Update(track, b, time);
-            dbContext.SaveChanges();
-        }
         public List<BusStopModels> GetBusStopsFromTrack(int trackID)
         {
             return dbContext.Tracks.Find(trackID).BusStopsList;
@@ -117,7 +123,6 @@ namespace BusLocation.Models
         }
         public TrackModels GetLastTrack()
         {
-
             return GetAllTracks()[GetAllTracks().Count-1] ; 
         }
 
@@ -169,10 +174,20 @@ namespace BusLocation.Models
 
         public void AddTime(TimeModels time)
         {
-            dbContext.Time.Add(time);
+            TimeModels timeTmp = new TimeModels(time.value);
+            dbContext.Time.Add(timeTmp);
             dbContext.SaveChanges();
         }
-
+        public void AddTime(int value)
+        {
+            TimeModels timeTmp = new TimeModels(value);
+            dbContext.Time.Add(timeTmp);
+            dbContext.SaveChanges();
+        }
+        public List<TimeModels> GetAllTimes()
+        {
+            return (List<TimeModels>) dbContext.Time.ToList();
+        }
       
         #endregion
 

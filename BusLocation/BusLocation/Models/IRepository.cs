@@ -30,6 +30,7 @@ namespace BusLocation.Models
         #region Track
         List<TrackModels> GetAllTracks();
         TrackModels GetTrackByID(int trackID);
+        TrackModels GetTrackByName(String trackName);
         void AddTrack(TrackModels track);
         void DeleteTrackByID(int trackID);
         void UpdateTrack(TrackModels track);
@@ -50,6 +51,7 @@ namespace BusLocation.Models
         #region
         TimeModels GetTimeByID(int timeID);
         void AddTime(TimeModels time);
+        List<TimeModels> GetAllTimes();
         #endregion
         void Save();
     }

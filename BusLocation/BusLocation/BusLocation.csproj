@@ -209,6 +209,18 @@
     <Compile Include="Migrations\201612201219288_add time models.Designer.cs">
       <DependentUpon>201612201219288_add time models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612201227450_add time models 2.cs" />
+    <Compile Include="Migrations\201612201227450_add time models 2.Designer.cs">
+      <DependentUpon>201612201227450_add time models 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201250177_add time models 3.cs" />
+    <Compile Include="Migrations\201612201250177_add time models 3.Designer.cs">
+      <DependentUpon>201612201250177_add time models 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201557498_add time models 4.cs" />
+    <Compile Include="Migrations\201612201557498_add time models 4.Designer.cs">
+      <DependentUpon>201612201557498_add time models 4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusStopModels.cs" />
@@ -335,6 +347,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612201219288_add time models.resx">
       <DependentUpon>201612201219288_add time models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201227450_add time models 2.resx">
+      <DependentUpon>201612201227450_add time models 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201250177_add time models 3.resx">
+      <DependentUpon>201612201250177_add time models 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201557498_add time models 4.resx">
+      <DependentUpon>201612201557498_add time models 4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

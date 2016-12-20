@@ -14,5 +14,14 @@ namespace BusLocation.Models
         public int value { get; set; }
 
         public virtual List<TrackModels> TracksList { get; set; }
+
+        public TimeModels()
+        {
+            //empty
+        }
+        public TimeModels(int time)
+        {
+            value = time;
+        }
     }
 }
