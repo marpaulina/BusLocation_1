@@ -34,7 +34,7 @@ namespace BusLocation.Models
         void DeleteTrackByID(int trackID);
         void UpdateTrack(TrackModels track);
         List<BusStopModels> GetBusStopsFromTrack(int trackID);
-        List<int> GetTimeList(int trackID);
+        List<TimeModels> GetTimeList(int trackID);
         TrackModels GetLastTrack();
 
         #endregion
@@ -47,6 +47,10 @@ namespace BusLocation.Models
         void UpdateRoute(RouteModels route);
         #endregion
 
+        #region
+        TimeModels GetTimeByID(int timeID);
+        void AddTime(TimeModels time);
+        #endregion
         void Save();
     }
 }

@@ -5,19 +5,16 @@
     ViewBag.Title = "Trasy";
 }
 
-<h2>Tracks</h2>
-
-
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NameTrack)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BusStops)
+            @Html.DisplayNameFor(model => model.BusStopsList)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeToNextStop)
+            @Html.Display("Czas do następnego przystaku")
         </th>
         <th></th>
     </tr>
@@ -31,22 +28,14 @@
         </td>
         <td>
             <ul>
-                @foreach (var busStop in item.BusStops)
+                @foreach (var busStop in item.BusStopsList)
                 {
                     <li>@busStop.Name</li>
                 }
             </ul>
         </td>
         <td>
-        @if (item.TimeToNextStop != null)
-        {
-            <ul>
-                @foreach (var time in item.TimeToNextStop)
-                {
-                    <li>@time.ToString()</li>
-                }
-            </ul>
-        }
+        
         </td>
         <td>
             @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |

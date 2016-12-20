@@ -25,6 +25,7 @@ namespace BusLocation.Models
         public DbSet<BusStopModels> BusStops { get; set; }
         public DbSet<RouteModels> Routes { get; set; }
         public DbSet<TrackModels> Tracks { get; set; }
+        public DbSet<TimeModels> Time { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

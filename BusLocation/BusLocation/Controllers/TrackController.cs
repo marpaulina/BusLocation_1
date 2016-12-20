@@ -47,11 +47,11 @@ namespace BusLocation.Controllers
                 }
                 else
                 {
-                    List<BusStopModels> b = repo.GetLastTrack().BusStops;
+                    List<BusStopModels> b = repo.GetLastTrack().BusStopsList;
                     b.Add(repo.GetBusStopByID(model.BusStopId));
 
-                    List<int> time = repo.GetLastTrack().TimeToNextStop;
-                    time.Add(model.TimeToNext);
+                    List<TimeModels> time = repo.GetLastTrack().TimeToNextStopsList;
+                    time.Add(repo.GetTimeByID(model.TimeId));
                     
                     repo.UpdateTrack(repo.GetLastTrack(), b, time);
                 }
@@ -59,9 +59,9 @@ namespace BusLocation.Controllers
             }
             else
             {
-                if (repo.GetLastTrack().BusStops.Count > 1)
+                if (repo.GetLastTrack().BusStopsList.Count > 1)
                 {
-                    repo.GetLastTrack().TimeToNextStop.Remove(repo.GetLastTrack().TimeToNextStop.Count - 1);
+                    //repo.GetLastTrack().TimeToNextStopsList.Remove(repo.GetLastTrack().TimeToNextStopsList.Count() - 1);
                     return View("Tracks", repo.GetAllTracks());
                 }
                 else
@@ -91,7 +91,7 @@ namespace BusLocation.Controllers
         public ActionResult Delete(int id)
         {
             TrackModels track = repo.GetLastTrack();
-            List<BusStopModels> busStops = track.BusStops;
+            List<BusStopModels> busStops = track.BusStopsList;
             foreach ( BusStopModels b in busStops)
             {
                 if(b.Id == id)
@@ -100,14 +100,14 @@ namespace BusLocation.Controllers
                     break;
                 }
             }
-            track.BusStops = busStops;
+            track.BusStopsList = busStops;
             repo.UpdateTrack(track);
             return View("Create", repo.GetLastTrack());
         }
           public ActionResult DeleteTrack(int id)
         {
             TrackModels t = repo.GetTrackByID(id);
-            t.BusStops = null;
+            t.BusStopsList = null;
             repo.UpdateTrack(t);
             repo.DeleteTrackByID(id);
             return View("Tracks", repo.GetAllTracks());
@@ -127,11 +127,11 @@ namespace BusLocation.Controllers
 
             if (add != null)
             {
-                List<BusStopModels> b = repo.GetTrackByID(model.Id).BusStops;
+                List<BusStopModels> b = repo.GetTrackByID(model.Id).BusStopsList;
                 b.Add(repo.GetBusStopByID(model.BusStopId));
 
-                List<int> time = repo.GetTrackByID(model.Id).TimeToNextStop;
-                time.Add(model.TimeToNext);
+                List<TimeModels> time = repo.GetTrackByID(model.Id).TimeToNextStopsList;
+                time.Add(repo.GetTimeByID(model.TimeId));
 
                 repo.UpdateTrack(repo.GetLastTrack(), b, time);
 

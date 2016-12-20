@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BusLocation.Models.TrackModels>
+@using BusLocation.Models
+
+@{
+    ViewBag.Title = "Trasy";
+}
+
+<h2>Tracks</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameTrack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusStops)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeToNextStop)
+        </th>
+        <th></th>
+    </tr>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameTrack)
+        </td>
+        <td>
+            <ul>
+                @foreach (var busStop in item.BusStops)
+                {
+                    <li>@busStop.Name</li>
+                }
+            </ul>
+        </td>
+        <td>
+        @if (item.TimeToNextStop != null)
+        {
+            <ul>
+                @foreach (var time in item.TimeToNextStop)
+                {
+                    <li>@time.ToString()</li>
+                }
+            </ul>
+        }
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Usuń", "DeleteTrack", new { id = item.Id })
+        </td>
+    </tr>
+    }
+}
+
+</table>
+<p>
+    @Html.ActionLink("Stwórz trase", "Create","Track")
+</p>

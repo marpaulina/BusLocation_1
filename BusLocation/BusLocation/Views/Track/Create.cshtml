@@ -2,11 +2,9 @@
 @using BusLocation.Models
 
 @{
-    ViewBag.Title = "Tworzenie trasy";
+    ViewBag.Title = "Stwórz trase";
     List<BusStopModels> busStops = ViewBag.BusStops;
 }
-
-<h2>Create</h2>
 
 
 @using (Html.BeginForm("Create", "Track", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))

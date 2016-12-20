@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ZarzadzajBusem" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Paulina\\Documents\\GitHub\\BusLocation_1\\BusLocation\\BusLocation\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Paulina\\Documents\\GitHub\\BusLocation_1\\BusLocation\\BusLocation\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:serverbuslocation.database.windows.net,1433;Initial Catalog=DataBaseBusLocation;User ID=baldwina@serverbuslocation;Password=Mate3Matyka" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Paulina\\Documents\\GitHub\\BusLocation_1\\BusLocation\\BusLocation\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

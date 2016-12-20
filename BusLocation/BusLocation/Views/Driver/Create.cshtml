@@ -5,8 +5,6 @@
     ViewBag.Title = "Dodawanie kierowcy";
 }
 
-<h2>CreateDriver</h2>
-
 @using (Html.BeginForm("Create","Driver", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()

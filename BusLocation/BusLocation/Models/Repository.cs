@@ -84,7 +84,7 @@ namespace BusLocation.Models
 
         public void AddTrack(TrackModels track)
         {
-            TrackModels track2 = new TrackModels(track.NameTrack, track.BusStopId, track.TimeToNext);
+            TrackModels track2 = new TrackModels(track.NameTrack, track.BusStopId, track.TimeId);
             dbContext.Tracks.Add(track2);
             dbContext.SaveChanges();
         }
@@ -101,19 +101,19 @@ namespace BusLocation.Models
             dbContext.Tracks.Find(track.Id).Update(track);
             dbContext.SaveChanges();
         }
-        public void UpdateTrack(TrackModels track, List<BusStopModels> b, List <int> time)
+        public void UpdateTrack(TrackModels track, List<BusStopModels> b, List <TimeModels> time)
         {
             dbContext.Tracks.Find(track.Id).Update(track, b, time);
             dbContext.SaveChanges();
         }
         public List<BusStopModels> GetBusStopsFromTrack(int trackID)
         {
-            return dbContext.Tracks.Find(trackID).BusStops;
+            return dbContext.Tracks.Find(trackID).BusStopsList;
         }
 
-        public List<int> GetTimeList(int trackID)
+        public List<TimeModels> GetTimeList(int trackID)
         {
-            return dbContext.Tracks.Find(trackID).TimeToNextStop;
+            return dbContext.Tracks.Find(trackID).TimeToNextStopsList;
         }
         public TrackModels GetLastTrack()
         {
@@ -160,6 +160,23 @@ namespace BusLocation.Models
         #endregion
 
         //************************************************
+
+        #region
+        public TimeModels GetTimeByID(int timeID)
+        {
+            return dbContext.Time.Find(timeID);
+        }
+
+        public void AddTime(TimeModels time)
+        {
+            dbContext.Time.Add(time);
+            dbContext.SaveChanges();
+        }
+
+      
+        #endregion
+
+
         public void Dispose()
         {
             throw new NotImplementedException();
@@ -170,6 +187,6 @@ namespace BusLocation.Models
             throw new NotImplementedException();
         }
 
-        
+      
     }
 }

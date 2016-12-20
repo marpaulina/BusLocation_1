@@ -1,11 +1,8 @@
 ﻿@model BusLocation.Models.DriverModels
 @using BusLocation.Models
 @{
-    ViewBag.Title = "Edytuj dane";
+    ViewBag.Title = "Edytuj dane kierowcy";
 }
-
-<h2>Edit</h2>
-
 
 @using (Html.BeginForm("Edit", "Driver", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {

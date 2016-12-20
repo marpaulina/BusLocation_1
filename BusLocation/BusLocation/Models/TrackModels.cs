@@ -15,10 +15,10 @@ namespace BusLocation.Models
         public String NameTrack { get; set; }
       
         [Display(Name = "Czas do nastepnego przystanku")]
-        public List<int> TimeToNextStop { get; set; }
+        public List<TimeModels> TimeToNextStopsList { get; set; }
 
         [Display(Name = "Przystanki")]
-        public virtual List<BusStopModels> BusStops { get; set; }
+        public virtual List<BusStopModels> BusStopsList { get; set; }
 
         [Required]
         [Display(Name = "Przystanek")]
@@ -26,7 +26,7 @@ namespace BusLocation.Models
 
         [Required]
         [Display(Name = "Czas do nastepnego przystanku")]
-        public int TimeToNext { get; set; }
+        public int TimeId { get; set; }
 
 
         Repository repo = new Repository();
@@ -35,26 +35,26 @@ namespace BusLocation.Models
             //empty
         }
 
-        public TrackModels(string nameTrack, int busStop, int timeToNext)
+        public TrackModels(string nameTrack, int busStop, int time)
         {
             NameTrack = nameTrack;
-            TimeToNextStop = new List<int>();
-            TimeToNextStop.Add(timeToNext);
-            BusStops = new List<BusStopModels>();
-            BusStops.Add(repo.GetBusStopByID(busStop));
+            TimeToNextStopsList = new List<TimeModels>();
+            TimeToNextStopsList.Add(repo.GetTimeByID(time));
+            BusStopsList = new List<BusStopModels>();
+            BusStopsList.Add(repo.GetBusStopByID(busStop));
         }
 
         public void Update(TrackModels track)
         {
             NameTrack = track.NameTrack;
-            TimeToNextStop = track.TimeToNextStop;
-            BusStops = track.BusStops;
+            TimeToNextStopsList = track.TimeToNextStopsList;
+            BusStopsList = track.BusStopsList;
         }
 
-        public void Update(TrackModels track, List<BusStopModels> b, List<int> time)
+        public void Update(TrackModels track, List<BusStopModels> b, List<TimeModels> time)
         {
-            BusStops = b;
-            TimeToNextStop = time;
+            BusStopsList = b;
+            TimeToNextStopsList = time;
         }
 
     }
