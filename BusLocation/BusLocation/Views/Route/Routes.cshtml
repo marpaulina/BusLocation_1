@@ -38,5 +38,7 @@
 }
 </table>
 <p>
-    @Html.ActionLink("Stwórz połączenie", "Create","Route")
+    <a href="@Url.Action("Create","Route")">
+        <input type="submit" name="create" value="Dodaj połączenie" class="btn btn-primary" />
+    </a>
 </p>

@@ -58,5 +58,7 @@
 
 </table>
 <p>
-    @Html.ActionLink("Stwórz trase", "Create","Track")
+    <a href="@Url.Action("Create","Track")">
+        <input type="submit" name="create" value="Dodaj trase" class="btn btn-primary" />
+    </a>
 </p>
