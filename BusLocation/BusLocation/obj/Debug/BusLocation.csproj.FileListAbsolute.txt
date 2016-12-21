@@ -79,3 +79,5 @@ C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debu
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.addtimemodels2.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.addtimemodels3.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.addtimemodels4.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addvalidation.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addvalidation2.resources

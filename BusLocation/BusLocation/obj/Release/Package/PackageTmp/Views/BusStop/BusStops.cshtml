@@ -49,5 +49,7 @@
 </table>
 
 <p>
-    @Html.ActionLink("Stwórz przystanek", "Create","BusStop")
+    <a href="@Url.Action("Create","BusStop")">
+        <input type="submit" name="create" value="Dodaj przystanek" class="btn btn-primary" />
+    </a>
 </p>

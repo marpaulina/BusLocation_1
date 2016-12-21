@@ -41,7 +41,7 @@
                 <select class="form-control" name="BusStopId" size="1">
                     @foreach (var busStop in busStops)
                     {
-                        <option value="@busStop.Id">@busStop.Name </option>
+                        <option value="@busStop.Id">@busStop.Name  @busStop.City </option>
                     }
                 </select>
             </div>

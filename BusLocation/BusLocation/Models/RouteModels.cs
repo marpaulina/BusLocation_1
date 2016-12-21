@@ -9,12 +9,14 @@ namespace BusLocation.Models
         public int Id { get; set; }
 
         [Display(Name = "Trasa")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna nazwa trasy (tylko litery).")]
         public virtual TrackModels  Track { get; set; }
 
         [Display(Name = "Trasa")]
         public int TrackId { get; set; }
 
         [Display(Name = "Godzina odjazdu")]
+        [DataType(DataType.Time, ErrorMessage ="Błędna godzina (np 11:10).")]
         public TimeSpan StartTime { get; set; }
 
         Repository repo = new Repository();

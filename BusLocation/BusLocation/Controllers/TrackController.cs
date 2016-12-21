@@ -19,9 +19,9 @@ namespace BusLocation.Controllers
         public ActionResult Tracks()
         {
             //dodanie 50 intow do timemodels
-            //if(repo.GetTimeByID(0) == null)
+            //if (repo.GetTimeByID(0) == null)
             //{
-            //   for(int i = 1; i <= 50; i++)
+            //    for (int i = 1; i <= 50; i++)
             //    {
             //        repo.AddTime(i);
             //    }
@@ -46,46 +46,53 @@ namespace BusLocation.Controllers
         [HttpPost]
         public ActionResult Create(string add, string create, TrackModels model)
         {
-            setDataToView();
-            if (add != null)
-            {
-                if ( repo.GetAllTracks() == null || repo.GetAllTracks().Count == 0 || Session["TextBoxNameDisable"].Equals(false))
+                setDataToView();
+                if (add != null)
                 {
-                    ViewBag.TextBoxNameEnable = false;
-                    repo.AddTrack(model);
+                    if (repo.GetAllTracks() == null || repo.GetAllTracks().Count == 0 || Session["TextBoxNameDisable"].Equals(false))
+                    {
+                        if (ModelState.IsValid)
+                        {
+                            ViewBag.TextBoxNameEnable = false;
+                            repo.AddTrack(model);
+                        }
+                        else
+                        {
+                            ViewBag.TextBoxNameEnable = true;
+                            return View(model);
+                        }
+                    }
+                    else
+                    {
+                        TrackModels track = repo.GetLastTrack();
+                        ViewBag.TextBoxNameEnable = false;
+                        List<BusStopModels> busStops = track.BusStopsList;
+                        busStops.Add(repo.GetBusStopByID(model.BusStopId));
 
-                }
-                else
-                {
-                    TrackModels track = repo.GetLastTrack(); 
-                    ViewBag.TextBoxNameEnable = false;
-                    List<BusStopModels> busStops = track.BusStopsList;
-                    busStops.Add(repo.GetBusStopByID(model.BusStopId));
+                        List<TimeModels> times = track.TimeToNextStopsList;
+                        times.Add(repo.GetTimeByID(model.TimeId));
 
-                    List<TimeModels> times = track.TimeToNextStopsList;
-                    times.Add(repo.GetTimeByID(model.TimeId));
-
-                    track.BusStopsList = busStops;
-                    track.TimeToNextStopsList = times;
-                    repo.UpdateTrack(track);
-                }
-                return View(repo.GetLastTrack());
-            }
-            else
-            {
-                if (repo.GetLastTrack().BusStopsList.Count > 1)
-                {
-                    //cos tu nie gara
-                    //repo.GetLastTrack().TimeToNextStopsList.Remove(repo.GetLastTrack().TimeToNextStopsList.Count() - 1);
-                    return View("Tracks", repo.GetAllTracks());
-                }
-                else
-                {
-                    //tu tez
-                    //ViewBag.Crete = "Trasa musi zawierac conajmniej dwa przystanki";
+                        track.BusStopsList = busStops;
+                        track.TimeToNextStopsList = times;
+                        repo.UpdateTrack(track);
+                    }
                     return View(repo.GetLastTrack());
                 }
-            }
+                else
+                {
+                    if (repo.GetLastTrack().BusStopsList.Count > 1)
+                    {
+                        //cos tu nie gara
+                        //repo.GetLastTrack().TimeToNextStopsList.Remove(repo.GetLastTrack().TimeToNextStopsList.Count() - 1);
+                        return View("Tracks", repo.GetAllTracks());
+                    }
+                    else
+                    {
+                        repo.DeleteTrackByID(repo.GetLastTrack().Id);
+                        //ViewBag.Crete = "Trasa musi zawierac conajmniej dwa przystanki";
+                        return View("Tracks", repo.GetAllTracks());
+                    }
+                }
         }
 
         public ActionResult Delete(int id, int trackId, Boolean creat)
@@ -137,32 +144,41 @@ namespace BusLocation.Controllers
         [HttpPost]
         public ActionResult Edit(string add, string save, TrackModels model)
         {
-            setDataToView();
-            ViewBag.TextBoxNameEnable = true;
-            TrackModels track = repo.GetTrackByID(model.Id);
-            if(track.NameTrack != model.NameTrack)
-            {
-                track.NameTrack = model.NameTrack;
-            }
-            if (add != null)
-            {
-                List<BusStopModels> busStops = track.BusStopsList;
-                busStops.Add(repo.GetBusStopByID(model.BusStopId));
+                setDataToView();
+                ViewBag.TextBoxNameEnable = true;
+                TrackModels track = repo.GetTrackByID(model.Id);
+                if (track.NameTrack != model.NameTrack)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        track.NameTrack = model.NameTrack;
+                    }
+                    else
+                    {
+                        model.BusStopsList = repo.GetTrackByID(model.Id).BusStopsList;
+                        model.TimeToNextStopsList = repo.GetTrackByID(model.Id).TimeToNextStopsList;
+                        return View(model);
+                    }
+                }
+                if (add != null)
+                {
+                    List<BusStopModels> busStops = track.BusStopsList;
+                    busStops.Add(repo.GetBusStopByID(model.BusStopId));
 
-                List<TimeModels> times = track.TimeToNextStopsList;
-                times.Add(repo.GetTimeByID(model.TimeId));
+                    List<TimeModels> times = track.TimeToNextStopsList;
+                    times.Add(repo.GetTimeByID(model.TimeId));
 
-                track.BusStopsList = busStops;
-                track.TimeToNextStopsList = times;
-                repo.UpdateTrack(track);
+                    track.BusStopsList = busStops;
+                    track.TimeToNextStopsList = times;
+                    repo.UpdateTrack(track);
 
-                return View(repo.GetTrackByID(model.Id));
-            }
-            else
-            {
-                repo.UpdateTrack(track);
-                return View("Tracks", repo.GetAllTracks());
-            }
+                    return View(repo.GetTrackByID(model.Id));
+                }
+                else
+                {
+                    repo.UpdateTrack(track);
+                    return View("Tracks", repo.GetAllTracks());
+                }
         }
         public void setDataToView()
         {

@@ -7,7 +7,7 @@
     List<TimeModels> times = ViewBag.Times;
     Boolean TextBoxNameEnable = ViewBag.TextBoxNameEnable;
 }
-
+<h2>Dodawanie trasy </h2>
 
 @using (Html.BeginForm("Create", "Track", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -41,7 +41,7 @@
                 <select class="form-control" name="BusStopId" size="1">
                     @foreach (var busStop in busStops)
                     {
-                        <option value="@busStop.Id">@busStop.Name </option>
+                        <option value="@busStop.Id">@busStop.Name  @busStop.City </option>
                     }
                 </select>
             </div>
@@ -87,8 +87,10 @@
         </tr>
         @if (Model != null)
         {
-            for(int i = 0; i < Model.BusStopsList.Count; i++)
+            if (Model.BusStopsList != null)
             {
+                for (int i = 0; i < Model.BusStopsList.Count; i++)
+                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => Model.BusStopsList[i].Name)
@@ -109,6 +111,7 @@
                         @Html.ActionLink("Usuń", "Delete", "Track", new { id = Model.BusStopsList[i].Id, trackId = Model.Id, creat = true }, null)
                     </td>
                 </tr>
+                }
             }
         }
     </table>

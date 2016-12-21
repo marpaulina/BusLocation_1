@@ -34,10 +34,14 @@ namespace BusLocation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(RouteModels route)
+        public ActionResult Create(RouteModels model)
         {
-            repo.AddRoute(route);
-            return View("Routes",repo.GetAllRoutes());
+            if (ModelState.IsValid)
+            {
+                repo.AddRoute(model);
+                return View("Routes", repo.GetAllRoutes());
+            }
+            return View(model);
         }
 
         public ActionResult Delete(int id)
@@ -54,10 +58,14 @@ namespace BusLocation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(RouteModels route)
+        public ActionResult Edit(RouteModels model)
         {
-            repo.UpdateRoute(route);
-            return View("Routes", repo.GetAllRoutes());
+            if (ModelState.IsValid)
+            {
+                repo.UpdateRoute(model);
+                return View("Routes", repo.GetAllRoutes());
+            }
+            return View(model);
         }
     }
 }

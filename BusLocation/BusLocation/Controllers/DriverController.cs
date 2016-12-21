@@ -29,7 +29,7 @@ namespace BusLocation.Controllers
         [HttpPost]
         public ActionResult Drivers(DriverModels model)
         {
-            return View(model);
+            return View(repo.GetAllDrivers());
         }
 
         public ActionResult Create()
@@ -40,15 +40,19 @@ namespace BusLocation.Controllers
         [HttpPost]
         public ActionResult Create(DriverModels model)
         {
-            repo.AddDriver(model);
-            return View("Drivers", repo.GetAllDrivers());
+            if (ModelState.IsValid)
+            {
+                repo.AddDriver(model);
+                return View("Drivers", repo.GetAllDrivers());
+            }
+            return View(model);
         }
 
        
         public ActionResult Delete(int id)
         {
-            repo.DeleteDriverByID(id);
-            return View("Drivers", repo.GetAllDrivers());
+                repo.DeleteDriverByID(id);
+                return View("Drivers", repo.GetAllDrivers());
         }
 
         public ActionResult Edit(int id)
@@ -57,10 +61,14 @@ namespace BusLocation.Controllers
         }
 
         [HttpPost]    
-        public ActionResult Edit(DriverModels driver)
+        public ActionResult Edit(DriverModels model)
         {
-            repo.UpdateDriver(driver);
-            return View("Drivers", repo.GetAllDrivers());
+            if (ModelState.IsValid)
+            {
+                repo.UpdateDriver(model);
+                return View("Drivers", repo.GetAllDrivers());
+            }
+            return View(model);
         }
 
 

@@ -35,8 +35,12 @@ namespace BusLocation.Controllers
         [HttpPost]
         public ActionResult Create(BusStopModels model)
         {
-            repo.AddBusStop(model);
-            return View("BusStops", repo.GetAllBusStops());
+            if (ModelState.IsValid)
+            {
+                repo.AddBusStop(model);
+                return View("BusStops", repo.GetAllBusStops());
+            }
+            return View(model);
         }
         public ActionResult Delete(int id)
         {
@@ -50,10 +54,14 @@ namespace BusLocation.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(BusStopModels busStop)
+        public ActionResult Edit(BusStopModels model)
         {
-            repo.UpdateBusStop(busStop);
-            return View("BusStops", repo.GetAllBusStops());
+            if (ModelState.IsValid)
+            {
+                repo.UpdateBusStop(model);
+                return View("BusStops", repo.GetAllBusStops());
+            }
+            return View(model);
         }
     }
 }

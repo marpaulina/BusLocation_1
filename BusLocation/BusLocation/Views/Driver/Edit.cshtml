@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edytuj dane kierowcy";
 }
-
+<h2>Edytowanie kierowcy</h2>
 @using (Html.BeginForm("Edit", "Driver", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()

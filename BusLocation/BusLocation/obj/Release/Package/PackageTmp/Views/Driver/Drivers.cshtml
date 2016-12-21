@@ -44,5 +44,7 @@
     }   
 </table>
 <p>
-    @Html.ActionLink("Dodaj kierowce", "Create", "Driver")
+    <a href="@Url.Action("Create","Driver")">
+        <input type="submit" name="create" value="Dodaj kierowce" class="btn btn-primary" />
+    </a>
 </p>

@@ -13,27 +13,30 @@ namespace BusLocation.Models
 
         [Required]
         [Display(Name = "Nazwa")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna nazwa przystanku (tylko litery).")]
         public string Name { get; set; }
 
         [Required]
         [Display(Name = "Miejscowość")]
+        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna miejscowość (tylko litery).")]
         public string City { get; set; }
 
         [Required]
         [Display(Name = "Szerokość geo")]
-        public double Latitiude { get; set; } //Szerokość
+        [Range(0.001, float.MaxValue, ErrorMessage = "Błędna szerokość geograficzna.")]
+        public float Latitiude { get; set; } //Szerokość
 
         [Required]
         [Display(Name = "Długość geo")]
-        public double Longitiude { get; set; } //Dlugosc
-        
+        [Range(0.001, float.MaxValue, ErrorMessage = "Błędna długość geograficzna.")]
+        public float Longitiude { get; set; } //Dlugosc
         public virtual List<TrackModels> Tracks { get; set; }
 
         public BusStopModels()
         {
 
         }
-       public BusStopModels(string name, string city, double latitude, double longitiude)
+       public BusStopModels(string name, string city, float latitude, float longitiude)
         {
             Name = name;
             City = city;
