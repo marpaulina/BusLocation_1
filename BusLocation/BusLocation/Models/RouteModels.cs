@@ -9,7 +9,6 @@ namespace BusLocation.Models
         public int Id { get; set; }
 
         [Display(Name = "Trasa")]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna nazwa trasy (tylko litery).")]
         public virtual TrackModels  Track { get; set; }
 
         [Display(Name = "Trasa")]
@@ -18,6 +17,12 @@ namespace BusLocation.Models
         [Display(Name = "Godzina odjazdu")]
         [DataType(DataType.Time, ErrorMessage ="Błędna godzina (np 11:10).")]
         public TimeSpan StartTime { get; set; }
+
+        [Display(Name = "Aktywne")]
+        public Boolean active { get; set; }
+
+        [Display(Name = "Kierowca")]
+        public int DriverID { get; set; }
 
         Repository repo = new Repository();
 
@@ -41,6 +46,8 @@ namespace BusLocation.Models
             {
                 Track = route.Track;
             }
+            DriverID = 0;
+            active = false;
             StartTime = route.StartTime;
         }
 
@@ -48,6 +55,19 @@ namespace BusLocation.Models
         {
             Track = repo.GetTrackByID(trackId);
             StartTime = startTime;
+        }
+        public void Update(int driverID, Boolean activate)
+        {
+            if (activate)
+            {
+                active = true;
+                DriverID = driverID;
+            }
+            else
+            {
+                active = false;
+                DriverID = 0;
+            }
         }
         public  void Update(RouteModels route)
         {

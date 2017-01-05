@@ -30,10 +30,34 @@ namespace BusLocation.Models
         {
             return dbContext.Drivers.Find(driverId);
         }
+        public DriverModels GetDriverByNick(string nick)
+        {
+            foreach(DriverModels driver in GetAllDrivers())
+            {
+                if(driver.Nick == nick)
+                {
+                    return driver;
+                }
+            }
+            return null;
+        }
         public void UpdateDriver(DriverModels driver)
         {
             dbContext.Drivers.Find(driver.Id).Update(driver);
             dbContext.SaveChanges();
+        }
+        public void UpdateDriver(int driverID, int routeID, Boolean activate)
+        {
+            if (activate)
+            {
+                dbContext.Drivers.Find(driverID).Update(routeID);
+                dbContext.SaveChanges();
+            }
+            else
+            {
+                dbContext.Drivers.Find(driverID).Update(0);
+                dbContext.SaveChanges();
+            }
         }
 
         #endregion
@@ -162,6 +186,36 @@ namespace BusLocation.Models
             dbContext.SaveChanges();
         }
 
+        public void UpdateRoute(int routeID, int driverID, Boolean activate)
+        {
+            dbContext.Routes.Find(routeID).Update(driverID, activate);
+            dbContext.SaveChanges();
+        }
+        public void ActivateRoute(int routeID)
+        {
+            dbContext.Routes.Find(routeID).active = true;
+            dbContext.SaveChanges();
+        }
+        public void DeactivativateRoute(int routeID)
+        {
+            dbContext.Routes.Find(routeID).active = false;
+            dbContext.SaveChanges();
+        }
+       
+        public List<RouteModels> GetAllActiveRoutes()
+        {
+            List<RouteModels> routeList = new List<RouteModels>();
+
+            foreach(RouteModels route in (List<RouteModels>)dbContext.Routes.ToList())
+            {
+                if (route.active)
+                {
+                    routeList.Add(route);
+                }
+            }
+            return routeList;
+        }
+
         #endregion
 
         //************************************************
@@ -188,9 +242,8 @@ namespace BusLocation.Models
         {
             return (List<TimeModels>) dbContext.Time.ToList();
         }
-      
-        #endregion
 
+        #endregion
 
         public void Dispose()
         {
@@ -202,6 +255,6 @@ namespace BusLocation.Models
             throw new NotImplementedException();
         }
 
-      
+       
     }
 }

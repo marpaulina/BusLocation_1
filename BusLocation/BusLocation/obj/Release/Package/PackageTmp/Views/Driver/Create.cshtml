@@ -4,13 +4,13 @@
 @{
     ViewBag.Title = "Dodawanie kierowcy";
 }
+<h2>Dodawanie kierowcy</h2>
 
 @using (Html.BeginForm("Create","Driver", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>DriverModels</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

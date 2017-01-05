@@ -46,13 +46,11 @@ namespace BusLocation.Models
         void AddRoute(RouteModels route);
         void DeleteRouteByID(int routeID);
         void UpdateRoute(RouteModels route);
+        void ActivateRoute(int routeID);
+        void DeactivativateRoute(int routeID);
+        List<RouteModels> GetAllActiveRoutes();
         #endregion
 
-        #region
-        TimeModels GetTimeByID(int timeID);
-        void AddTime(TimeModels time);
-        List<TimeModels> GetAllTimes();
-        #endregion
         void Save();
     }
 }

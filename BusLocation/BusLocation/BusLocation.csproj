@@ -52,12 +52,24 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -167,7 +179,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\ActionForUserController.cs" />
     <Compile Include="Controllers\BusStopController.cs" />
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -228,6 +242,30 @@
     <Compile Include="Migrations\201612210017108_Add validation 2.cs" />
     <Compile Include="Migrations\201612210017108_Add validation 2.Designer.cs">
       <DependentUpon>201612210017108_Add validation 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612301417242_Add Active Route.cs" />
+    <Compile Include="Migrations\201612301417242_Add Active Route.Designer.cs">
+      <DependentUpon>201612301417242_Add Active Route.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612302244171_nazwa.cs" />
+    <Compile Include="Migrations\201612302244171_nazwa.Designer.cs">
+      <DependentUpon>201612302244171_nazwa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701012314591_Add active boolean variable to route.cs" />
+    <Compile Include="Migrations\201701012314591_Add active boolean variable to route.Designer.cs">
+      <DependentUpon>201701012314591_Add active boolean variable to route.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701012327225_Add method to active variable in route.cs" />
+    <Compile Include="Migrations\201701012327225_Add method to active variable in route.Designer.cs">
+      <DependentUpon>201701012327225_Add method to active variable in route.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701030053540_Add driverRoute.cs" />
+    <Compile Include="Migrations\201701030053540_Add driverRoute.Designer.cs">
+      <DependentUpon>201701030053540_Add driverRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701031621072_Update route validation.cs" />
+    <Compile Include="Migrations\201701031621072_Update route validation.Designer.cs">
+      <DependentUpon>201701031621072_Update route validation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -319,6 +357,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ActionForUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -370,6 +409,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612210017108_Add validation 2.resx">
       <DependentUpon>201612210017108_Add validation 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612301417242_Add Active Route.resx">
+      <DependentUpon>201612301417242_Add Active Route.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612302244171_nazwa.resx">
+      <DependentUpon>201612302244171_nazwa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701012314591_Add active boolean variable to route.resx">
+      <DependentUpon>201701012314591_Add active boolean variable to route.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701012327225_Add method to active variable in route.resx">
+      <DependentUpon>201701012327225_Add method to active variable in route.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701030053540_Add driverRoute.resx">
+      <DependentUpon>201701030053540_Add driverRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701031621072_Update route validation.resx">
+      <DependentUpon>201701031621072_Update route validation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

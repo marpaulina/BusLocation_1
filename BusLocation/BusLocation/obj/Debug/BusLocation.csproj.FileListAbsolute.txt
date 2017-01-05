@@ -81,3 +81,15 @@ C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debu
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.addtimemodels4.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addvalidation.resources
 C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addvalidation2.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Net.Http.Formatting.dll
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Web.Http.dll
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Web.Http.WebHost.dll
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Net.Http.Formatting.xml
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Web.Http.xml
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\bin\System.Web.Http.WebHost.xml
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.AddActiveRoute.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.nazwa.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addactivebooleanvariabletoroute.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Addmethodtoactivevariableinroute.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.AdddriverRoute.resources
+C:\Users\Paulina\Documents\GitHub\BusLocation_1\BusLocation\BusLocation\obj\Debug\BusLocation.Migrations.Updateroutevalidation.resources

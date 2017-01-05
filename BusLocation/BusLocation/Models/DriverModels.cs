@@ -34,6 +34,8 @@ namespace BusLocation.Models
        [StringLength(100, ErrorMessage = "Błędne hasło, minimalna ilość znakóe 6.", MinimumLength = 6)]
        public string Password { get; set; }
 
+       public int RouteID { get; set; }
+
         public DriverModels()
         {
             //Empty 
@@ -52,6 +54,10 @@ namespace BusLocation.Models
             Surname = driver.Surname;
             Nick = driver.Nick;
             Password = driver.Password;
+        }
+        public void Update(int routeID)
+        {
+            RouteID = routeID;
         }
 
         public bool Empty

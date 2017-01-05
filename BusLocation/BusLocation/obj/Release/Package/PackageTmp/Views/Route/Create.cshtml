@@ -5,14 +5,13 @@
     ViewBag.Title = "Tworzenie połączenia";
     List<TrackModels> tracks = ViewBag.Tracks;
 }
-
+<h2>Dodawanie połączenia </h2>
 
 @using (Html.BeginForm("Create", "Route", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>RouteModels</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

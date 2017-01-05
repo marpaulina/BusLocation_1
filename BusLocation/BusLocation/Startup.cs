@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using BusLocation.App_Start;
+using Microsoft.Owin;
 using Owin;
+using System.Web.Http;
 
 [assembly: OwinStartupAttribute(typeof(BusLocation.Startup))]
 namespace BusLocation
@@ -8,7 +10,10 @@ namespace BusLocation
     {
         public void Configuration(IAppBuilder app)
         {
+            HttpConfiguration config = new HttpConfiguration();
             ConfigureAuth(app);
+            WebApiConfig.Register(config);
+
         }
     }
 }
