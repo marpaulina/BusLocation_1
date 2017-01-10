@@ -23,18 +23,35 @@ namespace BusLocation.Controllers
 
         public ActionResult Drivers()
         {
-            return View(repo.GetAllDrivers());
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(repo.GetAllDrivers());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]
         public ActionResult Drivers(DriverModels model)
         {
-            return View(repo.GetAllDrivers());
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(repo.GetAllDrivers());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult Create()
         {
-            return View();
+                return View();
+          
         }
 
         [HttpPost]

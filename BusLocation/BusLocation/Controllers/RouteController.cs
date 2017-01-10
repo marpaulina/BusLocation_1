@@ -18,13 +18,30 @@ namespace BusLocation.Controllers
 
         public ActionResult Routes()
         {
-            return View(repo.GetAllRoutes());
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(repo.GetAllRoutes());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+           
         }
 
         [HttpPost]
         public ActionResult Routes(RouteModels model)
         {
-            return View(model);
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         public ActionResult Create()
         {

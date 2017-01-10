@@ -267,6 +267,62 @@
     <Compile Include="Migrations\201701031621072_Update route validation.Designer.cs">
       <DependentUpon>201701031621072_Update route validation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701052124505_Add variable to DriveModel.cs" />
+    <Compile Include="Migrations\201701052124505_Add variable to DriveModel.Designer.cs">
+      <DependentUpon>201701052124505_Add variable to DriveModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701060040446_Add variable to DriveModel 2.cs" />
+    <Compile Include="Migrations\201701060040446_Add variable to DriveModel 2.Designer.cs">
+      <DependentUpon>201701060040446_Add variable to DriveModel 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701062051340_Add lat lon to DriveModel.cs" />
+    <Compile Include="Migrations\201701062051340_Add lat lon to DriveModel.Designer.cs">
+      <DependentUpon>201701062051340_Add lat lon to DriveModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701062131262_Add hasRequestFromUser to DriveModel.cs" />
+    <Compile Include="Migrations\201701062131262_Add hasRequestFromUser to DriveModel.Designer.cs">
+      <DependentUpon>201701062131262_Add hasRequestFromUser to DriveModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701062341046_Add hasRequestFromUser to DriveModel 2.cs" />
+    <Compile Include="Migrations\201701062341046_Add hasRequestFromUser to DriveModel 2.Designer.cs">
+      <DependentUpon>201701062341046_Add hasRequestFromUser to DriveModel 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071710528_Add hasRequestFromUser to DriveModel 3.cs" />
+    <Compile Include="Migrations\201701071710528_Add hasRequestFromUser to DriveModel 3.Designer.cs">
+      <DependentUpon>201701071710528_Add hasRequestFromUser to DriveModel 3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071716352_Add hasRequestFromUser to DriveModel 4.cs" />
+    <Compile Include="Migrations\201701071716352_Add hasRequestFromUser to DriveModel 4.Designer.cs">
+      <DependentUpon>201701071716352_Add hasRequestFromUser to DriveModel 4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701071731031_Add hasRequestFromUser to DriveModel 5.cs" />
+    <Compile Include="Migrations\201701071731031_Add hasRequestFromUser to DriveModel 5.Designer.cs">
+      <DependentUpon>201701071731031_Add hasRequestFromUser to DriveModel 5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701080056581_Add hasRequestFromUser to DriveModel 6.cs" />
+    <Compile Include="Migrations\201701080056581_Add hasRequestFromUser to DriveModel 6.Designer.cs">
+      <DependentUpon>201701080056581_Add hasRequestFromUser to DriveModel 6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701081301089_Add User Request Table.cs" />
+    <Compile Include="Migrations\201701081301089_Add User Request Table.Designer.cs">
+      <DependentUpon>201701081301089_Add User Request Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701081405469_Add update to User Request.cs" />
+    <Compile Include="Migrations\201701081405469_Add update to User Request.Designer.cs">
+      <DependentUpon>201701081405469_Add update to User Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701081708316_Add update to User Request 2.cs" />
+    <Compile Include="Migrations\201701081708316_Add update to User Request 2.Designer.cs">
+      <DependentUpon>201701081708316_Add update to User Request 2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701091321364_updatee.cs" />
+    <Compile Include="Migrations\201701091321364_updatee.Designer.cs">
+      <DependentUpon>201701091321364_updatee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701091355545_updatee 2.cs" />
+    <Compile Include="Migrations\201701091355545_updatee 2.Designer.cs">
+      <DependentUpon>201701091355545_updatee 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusStopModels.cs" />
@@ -278,6 +334,7 @@
     <Compile Include="Models\RouteModels.cs" />
     <Compile Include="Models\TimeModels.cs" />
     <Compile Include="Models\TrackModels.cs" />
+    <Compile Include="Models\UserRequestModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -428,6 +485,51 @@
     <EmbeddedResource Include="Migrations\201701031621072_Update route validation.resx">
       <DependentUpon>201701031621072_Update route validation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701052124505_Add variable to DriveModel.resx">
+      <DependentUpon>201701052124505_Add variable to DriveModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060040446_Add variable to DriveModel 2.resx">
+      <DependentUpon>201701060040446_Add variable to DriveModel 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701062051340_Add lat lon to DriveModel.resx">
+      <DependentUpon>201701062051340_Add lat lon to DriveModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701062131262_Add hasRequestFromUser to DriveModel.resx">
+      <DependentUpon>201701062131262_Add hasRequestFromUser to DriveModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701062341046_Add hasRequestFromUser to DriveModel 2.resx">
+      <DependentUpon>201701062341046_Add hasRequestFromUser to DriveModel 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071710528_Add hasRequestFromUser to DriveModel 3.resx">
+      <DependentUpon>201701071710528_Add hasRequestFromUser to DriveModel 3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071716352_Add hasRequestFromUser to DriveModel 4.resx">
+      <DependentUpon>201701071716352_Add hasRequestFromUser to DriveModel 4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701071731031_Add hasRequestFromUser to DriveModel 5.resx">
+      <DependentUpon>201701071731031_Add hasRequestFromUser to DriveModel 5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701080056581_Add hasRequestFromUser to DriveModel 6.resx">
+      <DependentUpon>201701080056581_Add hasRequestFromUser to DriveModel 6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701081301089_Add User Request Table.resx">
+      <DependentUpon>201701081301089_Add User Request Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701081405469_Add update to User Request.resx">
+      <DependentUpon>201701081405469_Add update to User Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701081708316_Add update to User Request 2.resx">
+      <DependentUpon>201701081708316_Add update to User Request 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701091321364_updatee.resx">
+      <DependentUpon>201701091321364_updatee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701091355545_updatee 2.resx">
+      <DependentUpon>201701091355545_updatee 2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

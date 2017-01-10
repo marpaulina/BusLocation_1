@@ -11,7 +11,6 @@ namespace BusLocation.Models
 
         [Required]
         [Display(Name = "Nazwa trasy")]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędna nazwa trasy.")]
         public String NameTrack { get; set; }
       
         [Display(Name = "Czas do nastepnego przystanku")]
@@ -27,7 +26,6 @@ namespace BusLocation.Models
         [Required]
         [Display(Name = "Czas do nastepnego przystanku")]
         public int TimeId { get; set; }
-
 
         Repository repo = new Repository();
         public TrackModels()

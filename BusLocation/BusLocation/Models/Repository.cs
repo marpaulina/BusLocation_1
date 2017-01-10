@@ -46,16 +46,26 @@ namespace BusLocation.Models
             dbContext.Drivers.Find(driver.Id).Update(driver);
             dbContext.SaveChanges();
         }
-        public void UpdateDriver(int driverID, int routeID, Boolean activate)
+        public void UpdateDriver(DriverModels driver, int userRequestID)
+        {
+            dbContext.Drivers.Find(driver.Id).Update(userRequestID);
+            dbContext.SaveChanges();
+        }
+        public void UpdateDriver(int driverID, double lat, double lon)
+        {
+            dbContext.Drivers.Find(driverID).Update(lat, lon);
+            dbContext.SaveChanges();
+        }
+        public void UpdateDriver(int driverID, int routeID, int busStopID, TimeSpan time, Boolean activate)
         {
             if (activate)
             {
-                dbContext.Drivers.Find(driverID).Update(routeID);
+                dbContext.Drivers.Find(driverID).Update(routeID, busStopID, time);
                 dbContext.SaveChanges();
             }
             else
             {
-                dbContext.Drivers.Find(driverID).Update(0);
+                dbContext.Drivers.Find(driverID).Update(0,0,new TimeSpan(0,0,0));
                 dbContext.SaveChanges();
             }
         }
@@ -216,6 +226,46 @@ namespace BusLocation.Models
             return routeList;
         }
 
+        #endregion
+        #region UserRequest
+        public List<UserRequestModels> GetAllUserRequest()
+        {
+            return (List<UserRequestModels>)dbContext.UserRequest.ToList();
+        }
+
+
+        public UserRequestModels GetUserRequestByID(int userRequestID)
+        {
+            return dbContext.UserRequest.Find(userRequestID);
+        }
+        public void UpdateUserRequest(int userRequestID, string message)
+        {
+            dbContext.UserRequest.Find(userRequestID).Update(message);
+            dbContext.SaveChanges();
+        }
+        public void UpdateUserRequest(int userRequestID)
+        {
+            dbContext.UserRequest.Find(userRequestID).Update();
+            dbContext.SaveChanges();
+        }
+
+        public void AddUserRequest(int driverID, string userCity, string userBusStop)
+        {
+            UserRequestModels userRequest = new UserRequestModels(driverID, userCity, userBusStop);
+            dbContext.UserRequest.Add(userRequest);
+            dbContext.SaveChanges();
+        }
+
+        public void DeleteUserRequestByID(int userRequestID)
+        {
+            UserRequestModels r = GetUserRequestByID(userRequestID);
+            dbContext.UserRequest.Remove(r);
+            dbContext.SaveChanges();
+        }
+        public int LastUserRequest()
+        {
+            return GetAllUserRequest().Last().Id;
+        }
         #endregion
 
         //************************************************

@@ -26,14 +26,30 @@ namespace BusLocation.Controllers
             //        repo.AddTime(i);
             //    }
             //}
-            List<TrackModels> t = repo.GetAllTracks();
-            return View(t);
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(repo.GetAllTracks());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         [HttpPost]
         public ActionResult Tracks(TrackModels model)
         {
             setDataToView();
-            return View(model);
+            bool val1 = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if (val1)
+            {
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+          
         }
 
         public ActionResult Create()

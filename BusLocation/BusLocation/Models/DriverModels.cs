@@ -15,8 +15,8 @@ namespace BusLocation.Models
 
        [Required]
        [Display(Name = "Imie")]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędne imie (tylko litery).")]
-        public string Name { get; set; }
+       [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Błędne imie (tylko litery).")]
+       public string Name { get; set; }
 
        [Required]
        [Display(Name = "Nazwisko")]
@@ -35,6 +35,13 @@ namespace BusLocation.Models
        public string Password { get; set; }
 
        public int RouteID { get; set; }
+       public int BusStopID { get; set; }
+       public TimeSpan TimeFromBusStop { get; set; }
+       public double Latitude { get; set; }
+       public double Longitude { get; set; }
+       public virtual List<UserRequestModels> UsersRequests { get; set; }
+
+        Repository repo = new Repository();
 
         public DriverModels()
         {
@@ -43,6 +50,7 @@ namespace BusLocation.Models
 
         DriverModels(string name, string surname, string nick, string password)
         {
+            UsersRequests = new List<UserRequestModels>();
             Name = name;
             Surname = surname;
             Nick = nick;
@@ -55,9 +63,21 @@ namespace BusLocation.Models
             Nick = driver.Nick;
             Password = driver.Password;
         }
-        public void Update(int routeID)
+        public void Update(int userRequestID)
+        {
+            UserRequestModels userRequest = repo.GetUserRequestByID(userRequestID);
+            UsersRequests.Remove(userRequest);
+        }
+        public void Update(double lat, double lon)
+        {
+            Latitude = lat;
+            Longitude = lon;
+        }
+        public void Update(int routeID, int busStopID, TimeSpan time)
         {
             RouteID = routeID;
+            BusStopID = busStopID;
+            TimeFromBusStop = time;
         }
 
         public bool Empty

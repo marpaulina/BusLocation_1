@@ -10,9 +10,25 @@ namespace TestTime
     {
         static void Main(string[] args)
         {
-            TimeSpan t1 = System.DateTime.Now.TimeOfDay;
-            TimeSpan t2 = new TimeSpan(0,70,0);
-            System.Console.WriteLine(t1 +"  + 1h = "+t1.Add(t2) );
+            //TimeSpan t1 = System.DateTime.Now.TimeOfDay;
+            //TimeSpan t2 = System.DateTime.Now.TimeOfDay.Subtract(new TimeSpan(0, 10, 0));
+            //TimeSpan t3 = t1.Subtract(t2);
+            //if (t3.Minutes > 5)
+            //{
+            //    System.Console.WriteLine(t1 + " - " + t2 + " = " + t3);
+            //}
+            int min = 7;
+            string message = "false";
+            bool b = (7 < 5) || message.Contains("false");
+            if(b)
+            {
+                System.Console.WriteLine("nei zaatrzyma sie ");
+            }
+            else
+            {
+                System.Console.WriteLine("zaatrzyma sie ");
+            }
+            
             System.Console.ReadKey();
         }
     }
